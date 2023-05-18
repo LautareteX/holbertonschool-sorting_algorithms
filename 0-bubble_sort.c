@@ -29,7 +29,7 @@ bubble_sort(int *array, size_t size)
 	}
 	else
 	{
-		exit(0);	
+		exit(0);
 	}
 }
 
