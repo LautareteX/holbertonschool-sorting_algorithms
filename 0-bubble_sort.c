@@ -1,15 +1,15 @@
 #include "sort.h"
 
 void
-swap(int* a, int* b)
+swap(int *a, int *b)
 {
 	int temp = *a;
 	*a = *b;
-	*b = temp;				
+	*b = temp;
 }
 
 void
-bubble_sort(int* array, size_t size)
+bubble_sort(int *array, size_t size)
 {
 	size_t i, j;
 
