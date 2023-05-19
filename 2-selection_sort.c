@@ -11,27 +11,26 @@ swap(int *a, int *b)
 void
 selection_sort(int *array, size_t size)
 {
-		size_t iterator, min_i, step;
+		size_t iterator, step;
+		int *min_i;
 
 		if (array)
 		{
 		for (step = 0; step < size - 1; step++)
 		{
-			min_i = step;
+			min_i = array + step;
 			for (iterator = step + 1; iterator < size; iterator++)
 			{
-				if (array[iterator] < array[min_i])
-					min_i = iterator;
+				if (array[iterator] < *min_i)
+					min_i = array + iterator;
+				else
+					continue;
 			}
-			if (array[min_i] != array[step])
+
+			if ((array + step) != min_i)
 			{
-			swap(&array[min_i], &array[step]);
-			print_array(array, size);
-			}
-			else
-			{
+				swap(array + step, min_i);
 				print_array(array, size);
-				exit(0);
 			}
 		}
 		}
@@ -40,4 +39,3 @@ selection_sort(int *array, size_t size)
 			exit(0);
 		}
 }
-
