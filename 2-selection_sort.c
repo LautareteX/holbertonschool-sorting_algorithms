@@ -13,6 +13,8 @@ selection_sort(int *array, size_t size)
 {
 		size_t iterator, min_i, step;
 
+		if (array)
+		{
 		for (step = 0; step < size - 1; step++)
 		{
 			min_i = step;
@@ -24,6 +26,9 @@ selection_sort(int *array, size_t size)
 			swap(&array[min_i], &array[step]);
 			print_array(array, size);
 		}
-
-
+		}
+		else
+		{
+			exit(0);
+		}
 }
