@@ -59,7 +59,7 @@ void quick_recursion(int *array, int min, int max, size_t size)
 	{
 		pivot = partition(array, min, max, size);
 		quick_recursion(array, min, pivot - 1, size);
-		quick_recursion(array, pivot, max, size);
+		quick_recursion(array, pivot + 1, max, size);
 	}
 }
 
